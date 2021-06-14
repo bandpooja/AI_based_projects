@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 # Set random seed
-seed = 42
+seed = 2021
 
 ################################
 ########## DATA PREP ###########
@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random
 #################################
 
 # Fit a model on the train section
-regr = RandomForestRegressor(n_estimators=100, max_depth=5, random_state=seed)
+regr = RandomForestRegressor(n_estimators=50, max_depth=7, random_state=seed)
 regr.fit(X_train, y_train)
 
 # Report training set score
@@ -55,12 +55,12 @@ title_fs = 22 #fontsize
 sns.set(style="whitegrid")
 
 ax = sns.barplot(x="importance", y="feature", data=feature_df)
-ax.set_xlabel('Importance',fontsize = axis_fs) 
-ax.set_ylabel('Feature', fontsize = axis_fs)#ylabel
+ax.set_xlabel('Importance', fontsize=axis_fs)
+ax.set_ylabel('Feature', fontsize=axis_fs)#ylabel
 ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 
 plt.tight_layout()
-plt.savefig("feature_importance.png",dpi=120) 
+plt.savefig("feature_importance.png", dpi=120)
 plt.close()
 
 
@@ -68,9 +68,9 @@ plt.close()
 ############ PLOT RESIDUALS  #############
 ##########################################
 
-y_pred = regr.predict(X_test) + np.random.normal(0,0.25,len(y_test))
-y_jitter = y_test + np.random.normal(0,0.25,len(y_test))
-res_df = pd.DataFrame(list(zip(y_jitter,y_pred)), columns = ["true","pred"])
+y_pred = regr.predict(X_test)
+y_jitter = y_test
+res_df = pd.DataFrame(list(zip(y_jitter, y_pred)), columns=["true", "pred"])
 
 ax = sns.scatterplot(x="true", y="pred",data=res_df)
 ax.set_aspect('equal')
