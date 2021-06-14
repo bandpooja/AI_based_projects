@@ -4,6 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
 # Set random seed
 seed = 42
 
@@ -12,6 +13,8 @@ seed = 42
 ################################
 
 # Load in the data
+os.listdir('.')
+os.listdir("../")
 df = pd.read_csv("../wine_quality.csv")
 
 # Split into train and test sections
