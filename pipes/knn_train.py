@@ -5,6 +5,8 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
 
+seed=2021
+
 # Load in the data
 try:
         df = pd.read_csv("../wine_quality.csv")
