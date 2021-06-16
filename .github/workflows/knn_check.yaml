@@ -13,13 +13,12 @@ jobs:
 
           # Your ML workflow goes here
           pip install -r requirements.txt
-          python pipes/random_forest_train.py
+          python pipes/knn_train.py
 
-          echo "## RF Model metrics" > report.md
-          cat metrics.txt >> report.md
+          echo "## KNN Model metrics" > report.md
+          cat knn_metrics.txt >> report.md
 
-          echo "## RF Model viz" >> report.md
-          cml-publish feature_importance.png --md >> report.md
-          cml-publish residuals.png --md >> report.md
+          echo "## KNN Model viz" >> report.md
+          cml-publish knn_residuals.png --md >> report.md
 
           cml-send-comment report.md
