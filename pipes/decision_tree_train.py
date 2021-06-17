@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random
 #################################
 
 # Fit a model on the train section
-regr = DecisionTreeRegressor(max_depth=3,criterion='gini')
+regr = DecisionTreeRegressor(max_depth=3,criterion='mse')
 regr.fit(X_train, y_train)
 
 # Report training set score
