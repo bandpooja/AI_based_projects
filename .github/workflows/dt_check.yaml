@@ -19,7 +19,7 @@ jobs:
           cat decision_metrics.txt >> report.md
 
           echo "## RF Model viz" >> report.md
-          cml-publish feature_importance.png --md >> report.md
+          cml-publish dtfeature_importance.png --md >> report.md
           cml-publish dtresiduals.png --md >> report.md
 
           cml-send-comment report.md
