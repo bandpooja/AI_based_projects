@@ -16,7 +16,7 @@ jobs:
           python pipes/knn_train.py
 
           echo "## KNN Model metrics" > report.md
-          cat knn_metrics.txt >> report.md
+          cat knnmetrics.txt >> report.md
 
           echo "## KNN Model viz" >> report.md
           cml-publish knn_residuals.png --md >> report.md
