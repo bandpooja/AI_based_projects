@@ -32,7 +32,7 @@ test_score = regr.score(X_test, y_test) * 100
 # Write scores to a file
 with open("KNNmetrics.txt", 'w') as outfile:
         outfile.write("Training variance explained: %2.1f%%\n" % train_score)
-        outfile.write("Test variance explained: %2.1f%%\n" %)
+        outfile.write("Test variance explained: %2.1f%%\n" %test_score)
         
 
 ##########################################
