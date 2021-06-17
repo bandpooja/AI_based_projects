@@ -40,6 +40,10 @@ with open("KNNmetrics.txt", 'w') as outfile:
 ##########################################
 ############ PLOT RESIDUALS  #############
 ##########################################
+# image formatting
+axis_fs = 18 #fontsize
+title_fs = 22 #fontsize
+sns.set(style="whitegrid")
 
 y_pred = regr.predict(X_test)
 y_jitter = y_test
