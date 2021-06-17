@@ -15,10 +15,10 @@ jobs:
           pip install -r requirements.txt
           python pipes/decision_tree_train.py
 
-          echo "## RF Model metrics" > report.md
+          echo "## DT Model metrics" > report.md
           cat decision_metrics.txt >> report.md
 
-          echo "## RF Model viz" >> report.md
+          echo "## DT Model viz" >> report.md
           cml-publish dtfeature_importance.png --md >> report.md
           cml-publish dtresiduals.png --md >> report.md
 
