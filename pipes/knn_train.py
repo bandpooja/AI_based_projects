@@ -36,29 +36,6 @@ with open("KNNmetrics.txt", 'w') as outfile:
         outfile.write("Test variance explained: %2.1f%%\n" %test_score)
         
 
-##########################################
-##### PLOT FEATURE IMPORTANCE ############
-##########################################
-# Calculate feature importance in random forest
-importances = regr.feature_importances_
-labels = df.columns
-feature_df = pd.DataFrame(list(zip(labels, importances)), columns = ["feature","importance"])
-feature_df = feature_df.sort_values(by='importance', ascending=False,)
-
-# image formatting
-axis_fs = 18 #fontsize
-title_fs = 22 #fontsize
-sns.set(style="whitegrid")
-
-ax = sns.barplot(x="importance", y="feature", data=feature_df)
-ax.set_xlabel('Importance', fontsize=axis_fs)
-ax.set_ylabel('Feature', fontsize=axis_fs)#ylabel
-ax.set_title('KNN\nfeature importance', fontsize = title_fs)
-
-plt.tight_layout()
-plt.savefig("feature_importance.png", dpi=120)
-plt.close()
-
 
 ##########################################
 ############ PLOT RESIDUALS  #############
