@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
+seed = 2021
 # Load in the data
 try:
         df = pd.read_csv("../wine_quality.csv")
